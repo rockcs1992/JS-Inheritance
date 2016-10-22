@@ -22,11 +22,11 @@ console.log(p.x,p.y,p.z);
 /************************Style 1 : Prototype Inheritance************************/
 function Point(x,y) {
  	this.x = x;
-  this.y = y;
+  	this.y = y;
 }
 
 Point.prototype.swap = function(){
-		[this.x,this.y] = [this.y,this.x];
+	[this.x,this.y] = [this.y,this.x];
 };
 
 function SpecialPoint(x,y,z){
@@ -58,7 +58,7 @@ var Point = {
 var SpecialPoint = Object.create(Point);
 SpecialPoint.init = function(x,y,z){
 	Point.init(x,y);
-  SpecialPoint.z = z;
+  	SpecialPoint.z = z;
 };
 SpecialPoint.addOne = function(){
 	this.x++;
