@@ -1,8 +1,8 @@
 //************************* Pre : Simple Constructor and Instance*********************/
 function Point(x,y){
-  this.x = x;
-  this.y = y;
-  this.swap = swap;
+	this.x = x;
+	this.y = y;
+	this.swap = swap;
 }
 
 Point.prototype.swap = function(){
@@ -12,7 +12,7 @@ Point.prototype.swap = function(){
 var p = new Point(2,5);
 p.addOne = function(){
 	this.x++;
-  	this.y++;
+	this.y++;
 };
 p.z = 1;
 p.swap();
@@ -21,8 +21,8 @@ console.log(p.x,p.y,p.z);
 
 /************************Style 1 : Prototype Inheritance************************/
 function Point(x,y) {
- 	this.x = x;
-  	this.y = y;
+	this.x = x;
+	this.y = y;
 }
 
 Point.prototype.swap = function(){
@@ -31,13 +31,13 @@ Point.prototype.swap = function(){
 
 function SpecialPoint(x,y,z){
 	Point.call(this,x,y);
-  	this.z = z;
+	this.z = z;
 }
 
 SpecialPoint.prototype = Object.create(Point.prototype);
 SpecialPoint.prototype.addOne = function(){
 	this.x++;
-    this.y++;
+	this.y++;
 };
 
 var p = new SpecialPoint(2,5,1);
@@ -58,7 +58,7 @@ var Point = {
 var SpecialPoint = Object.create(Point);
 SpecialPoint.init = function(x,y,z){
 	Point.init(x,y);
-  	SpecialPoint.z = z;
+	SpecialPoint.z = z;
 };
 SpecialPoint.addOne = function(){
 	this.x++;
