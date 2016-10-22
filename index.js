@@ -1,4 +1,4 @@
-//*************************Style 1 : constructor *********************/
+//************************* Pre : Simple Constructor and Instance*********************/
 function Point(x,y){
   this.x = x;
   this.y = y;
@@ -19,7 +19,7 @@ p.swap();
 p.addOne();
 console.log(p.x,p.y,p.z); 
 
-/************************Style 2 : Prototype ************************/
+/************************Style 1 : Prototype Inheritance************************/
 function Point(x,y) {
  	this.x = x;
   this.y = y;
@@ -43,8 +43,8 @@ SpecialPoint.prototype.addOne = function(){
 var p = new SpecialPoint(2,5,1);
 p.addOne();
 p.swap();
-console.log(p.x,p.y,p.z);
-/************************Style 3 : Relationship ************************/
+
+/************************Style 2 : Related Object ************************/
 var Point = {
 	init :function(x,y){
 		this.x = x;
@@ -68,9 +68,9 @@ SpecialPoint.addOne = function(){
 var p = Object.create(SpecialPoint);
 p.init(2,5,1);
 p.addOne();
+p.swap();
 
-console.log(p.x,p.y,p.z);
-/***************************Style 4 : Class ****************************/
+/***************************Style 3 : ES6 Class ****************************/
 class Point {
 	constructor(x,y){
 		this.x = x;
@@ -91,3 +91,6 @@ class SpecialPoint extends Point {
 		this.y++;
 	}
 }
+var p = new SpecialPoint(2,5,1);
+p.addOne();
+p.swap();
